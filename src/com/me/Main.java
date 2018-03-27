@@ -14,7 +14,8 @@ public class Main {
     public static void main(String[] args) {
 
         //step 10 method (local class within method)
-        class ClickListener implements Button.OnClickListener {
+        //step 16 comment out below changes here do not affect button class
+        /*class ClickListener implements Button.OnClickListener {
 
             public ClickListener(){
 
@@ -30,7 +31,16 @@ public class Main {
         }
 
         //step 12 attach to button field
-        btnPrint.setOnClickListener(new ClickListener());
+        btnPrint.setOnClickListener(new ClickListener());*/
+
+        //step 17 method and override (anonymous class)
+        btnPrint.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(String title) {
+                System.out.println(title + " was clicked");
+            }
+        });
+
         //step 14 add code to call listen method
         listen();
 
